@@ -1,0 +1,1 @@
+/root/virtualenv/baseFlask/bin/uwsgi --reload ./log/uwsgi9091.pid
