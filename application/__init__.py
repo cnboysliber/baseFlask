@@ -8,6 +8,7 @@ from flask import Flask
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.pool import NullPool
+from application.controller import register_blueprints
 
 from application.config import default_config
 
@@ -23,6 +24,7 @@ if len(sys.argv) > 1:
     extra_config = import_module('application.config.%s' % sys.argv[1])
     app.config.from_object(extra_config)
 
+app.__version__ = '2.0.0'
 # for session
 app.secret_key = ''.join(random.choices(string.ascii_letters + str('0123456789'), k=40))
 
