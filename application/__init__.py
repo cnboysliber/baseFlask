@@ -1,9 +1,7 @@
 import os
-import sys
 import random
 import string
 from contextlib import contextmanager
-from importlib import import_module
 from flask import Flask
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
@@ -20,9 +18,6 @@ app = Flask(
 
 # 设置加载
 app.config.from_object(default_config)
-if len(sys.argv) > 1:
-    extra_config = import_module('application.config.%s' % sys.argv[1])
-    app.config.from_object(extra_config)
 
 app.__version__ = '2.0.0'
 # for session
