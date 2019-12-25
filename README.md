@@ -7,4 +7,4 @@
     - 2.以uwsgi方式启动，启动start.sh
     - 3.生产环境重启，sh restart.sh
     - 4.gunicorn启动方式：gunicorn -c gunicorn.py wsgi:app
-    -测试提交
+- 测试提交
